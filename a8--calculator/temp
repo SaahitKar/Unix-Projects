@@ -1,0 +1,40 @@
+/*
+1. Get first line and create char array for operators
+2. Create all pipes based on char array
+3. Int fb[2n+1][]
+4. After forking, work with correct pipes; child i works with 2i for getting from other pipe and 2i+1 from main and 2i+2 for next pipe
+5. Afterwards, close pipe and dup
+6. Char operators[100];
+7. Int numOperators = 0
+8. Int fds[100][2];
+9. Char line[1000]
+10. fgets(line, MAXLEN, finput)
+11. //line may have a + b - c + d, so format input
+12. strtok(line, " \n")
+13. Char *cptr;
+14. while(cptr = strtok(NULL, " \n")) {
+15. operators[numOperators++] = *cptr
+16. strtok(NULL, " \n")
+17. //create 2*numOperators +1 pipes
+18. For loop i
+    1. child(operators[i], i);
+19. While next line data available; fscanf
+    1. Read and pump them into pipes
+    2. Read the result from last child
+    3. Print it out
+
+Void child (char operator, int index) {
+	//close and dup
+	//close 0
+	dup();
+	//close(3);
+	dup(1)
+	//close(1);
+	dup();
+	//close all pipes to avoid children hanging
+	
+	For i = 0 to 2*numOperators
+	close(fds[i][0])
+    close(fds[i][1])
+	//execl: +, -, *, /
+}*/

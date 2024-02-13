@@ -1,0 +1,59 @@
+// internal threads:
+//     own_hash_value
+//     hash_left
+//     hash_right
+    
+//     char buffer[1000];
+//     //two child threads
+//     sprintf(%u%u%u, own_hash_value, hash_left, hash_right);
+//     finalhash = hash...(buffer, strlen(buffer));
+//     return finalhash;
+    
+//     //only one child thread
+//     sprintf(%u%u%u, own_hash_value, hash_left);
+//     finalhash = hash...(buffer, strlen(buffer));
+//     return finalhash;
+
+
+
+//  // use fstat to get file size
+//   struct stat fileInfo;
+//   if (fstat(fd, &fileInfo)) {
+// 		perror("file not found.");
+// 		exit(EXIT_FAILURE);
+// 	}
+//   // calculate nblocks 
+//   fileSize = fileInfo.st_size;
+
+//   nblocks = fileSize / BSIZE;
+//   if (fileSize % BSIZE)
+//   	nblocks++;
+//   	nblocks = nblocks / numThreads;
+//   printf("no. of blocks = %u \n", nblocks);
+
+//   buffer = (char *) malloc (fileSize);
+//   uint64_t nread = 0;
+//   ssize_t n = 0;
+//   while ((nread < fileSize) && ((n = read(fd, buffer, fileSize)) > 0)) {
+//   	nread += n;
+// 	n = read(fd, &buffer[nread], fileSize-nread);
+//   }
+  	
+//   if (n < 0) {
+// 		perror("File read error.");
+// 		exit(EXIT_FAILURE);
+//   	}
+
+//     clock_t start = clock();
+//     pthread_create(&thread1, NULL, child, (void *) n);
+
+// 	void *ptr;
+//     pthread_join(thread1, &ptr); 
+// 	printf("%u\n", (uint32_t) ptr);
+//     // calculate hash value of the input file
+
+//   clock_t end = clock();
+//   printf("hash value = %u \n", ptr);
+//   printf("time taken = %f \n", (end - start) * 1.0 / CLOCKS_PER_SEC);
+//   close(fd);
+  return EXIT_SUCCESS;
